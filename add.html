@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>HTML Client</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <h1>Product Manager</h1>
+    <div class="table-container">
+      <h2>Add New Product</h2>
+      <!-- form -->
+      <form id="addForm">
+        <table class="l-s-table">
+          <thead>
+            <tr>
+              <th>Title</th>
+              <th>Detail</th>
+            </tr>
+          </thead>
+          <tr>
+            <td>Product Name</td>
+            <td>
+              <input type="text" id="name" placeholder="Product name" />
+            </td>
+          </tr>
+          <tr>
+            <td>Details</td>
+            <td>
+              <textarea
+                id="description"
+                rows="10"
+                cols="70"
+                placeholder="Description"
+              ></textarea>
+            </td>
+          </tr>
+          <tr>
+            <td>Price (€)</td>
+            <td>
+              <input type="number" id="price" step="0.01" placeholder="0.00" />
+            </td>
+          </tr>
+          <tr>
+            <td>Available</td>
+            <td><input type="checkbox" id="available" checked /></td>
+          </tr>
+        </table>
+        <button type="submit" class="add-btn">Add Product</button>
+        <button
+          type="button"
+          onclick="window.location.href='index.html'"
+          class="cancel-btn"
+        >
+          Cancel
+        </button>
+      </form>
+    </div>
+
+    <!-- script -->
+    <script src="script.js"></script>
+  </body>
+</html>

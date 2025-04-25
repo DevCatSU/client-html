@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>HTML Client</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <h1>Product Manager</h1>
+
+    <!-- filter -->
+    <div class="table-container">
+      <h2>Product List</h2>
+      <!-- button -->
+      <div class="add-product-container">
+        <button onclick="location.href='add.html'" class="add-product-btn">
+          Add New Product
+        </button>
+      </div>
+      <div class="check-box-align">
+        <!-- available filter -->
+        <label>
+          <input type="checkbox" id="filterAvailable" />
+          Show Available Products Only
+        </label>
+      </div>
+
+      <!-- product table -->
+      <table>
+        <thead>
+          <tr>
+            <th>ID</th>
+            <th class="l-side">Product Name</th>
+            <th class="l-side">Description</th>
+            <th>Price (€)</th>
+            <th>Available</th>
+            <th>Actions</th>
+          </tr>
+        </thead>
+        <tbody id="productTableBody"></tbody>
+      </table>
+    </div>
+
+    <!-- script -->
+    <script src="script.js"></script>
+  </body>
+</html>

@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>html client</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <h1>product manager</h1>
+
+    <div class="table-container">
+      <h2>edit product</h2>
+
+      <!-- form -->
+      <form id="editForm">
+        <table class="l-s-table">
+          <thead>
+            <tr>
+              <th>title</th>
+              <th>detail</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>product name</td>
+              <td>
+                <input type="text" id="name" placeholder="product name" />
+              </td>
+            </tr>
+            <tr>
+              <td>description</td>
+              <td>
+                <textarea
+                  id="description"
+                  rows="10"
+                  cols="70"
+                  placeholder="description"
+                ></textarea>
+              </td>
+            </tr>
+            <tr>
+              <td>price (€)</td>
+              <td>
+                <input
+                  type="number"
+                  id="price"
+                  step="0.01"
+                  placeholder="0.00"
+                />
+              </td>
+            </tr>
+            <tr>
+              <td>available</td>
+              <td>
+                <input type="checkbox" id="available" />
+              </td>
+            </tr>
+          </tbody>
+        </table>
+
+        <!-- buttons -->
+        <button type="submit" class="edit-btn">update</button>
+        <button
+          type="button"
+          onclick="window.location.href='index.html'"
+          class="cancel-btn"
+        >
+          cancel
+        </button>
+      </form>
+    </div>
+
+    <!-- script -->
+    <script src="script.js"></script>
+  </body>
+</html>
