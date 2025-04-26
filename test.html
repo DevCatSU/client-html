@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>HTML Client - Unit Test</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/mocha/mocha.css">
+</head>
+<body>
+  <h1>HTML Client - Unit Testing (Mocha)</h1>
+
+  <div id="mocha"></div>
+
+  <!-- load mocha -->
+  <script src="https://cdn.jsdelivr.net/npm/mocha/mocha.js"></script>
+
+  <script>
+    mocha.setup('bdd'); // set up mocha with BDD style
+  </script>
+
+  <!-- validateInputs function -->
+  <script>
+    function validateInputs(nameInput, descriptionInput, priceInput) {
+      let hasError = false;
+
+      if (!nameInput.value.trim()) {
+        hasError = true;
+      }
+
+      if (!descriptionInput.value.trim()) {
+        hasError = true;
+      }
+
+      if (
+        !priceInput.value.trim() ||
+        isNaN(priceInput.value) ||
+        parseFloat(priceInput.value) <= 0
+      ) {
+        hasError = true;
+      }
+
+      return hasError;
+    }
+  </script>
+
+  <!-- test cases -->
+  <script>
+    describe('validateInputs Function (Mocha Only)', function() {
+
+      it('should return true if all fields are empty', function() {
+        const nameInput = { value: "" };
+        const descriptionInput = { value: "" };
+        const priceInput = { value: "" };
+        const result = validateInputs(nameInput, descriptionInput, priceInput);
+        if (result !== true) {
+          throw new Error('Expected result to be true');
+        }
+      });
+
+      it('should return true if price is not a positive number', function() {
+        const nameInput = { value: "Test Product" };
+        const descriptionInput = { value: "Nice Product" };
+        const priceInput = { value: "-5" };
+        const result = validateInputs(nameInput, descriptionInput, priceInput);
+        if (result !== true) {
+          throw new Error('Expected result to be true');
+        }
+      });
+
+      it('should return false if all fields are valid', function() {
+        const nameInput = { value: "Test Product" };
+        const descriptionInput = { value: "Good Description" };
+        const priceInput = { value: "100.00" };
+        const result = validateInputs(nameInput, descriptionInput, priceInput);
+        if (result !== false) {
+          throw new Error('Expected result to be false');
+        }
+      });
+
+    });
+
+    mocha.run(); // run the tests
+  </script>
+
+</body>
+</html>
