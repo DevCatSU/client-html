@@ -1,4 +1,4 @@
-const apiUrl = "http://localhost:4000/products";
+const apiUrl = "http://176.34.158.54:4000/products";
 
 // ===== common validation functions =====
 function validateInputs(nameInput, descriptionInput, priceInput) {
